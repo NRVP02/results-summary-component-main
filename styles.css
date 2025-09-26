@@ -1,0 +1,224 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face{
+    font-family: "Hanken Grotesk";
+    font-style: normal ;
+    font-weight: "500 700 800";
+    font-display: swap;
+    src: url("./assets/fonts/HankenGrotesk-VariableFont_wght.ttf");
+}
+
+
+
+:root{
+   --Light-red-t: hsla(0, 100%, 67%,0.05);
+   --Light-red: hsl(0, 100%, 67%);
+    --Orangey-yellow: hsl(39, 100%, 56%);
+   --Orangey-yellow-t: hsla(39, 100%, 56%,0.05);
+   --Green-teal: hsl(166, 100%, 37%);
+   --Green-teal-t: hsla(166, 100%, 37%,0.05);
+    --Cobalt-blue: hsl(234, 85%, 45%);
+   --Cobalt-blue-t: hsla(234, 85%, 45%,0.05);
+   --Light-slate-blue-background: hsl(252, 100%, 67%);
+   --Light-royal-blue-background: hsl(241, 81%, 54%);
+   --Violet-blue-circle: hsla(256, 72%, 46%, 1);
+   --Persian-blue-circle: hsla(241, 72%, 46%, 0);
+   --White: hsl(0, 0%, 100%);
+   --Pale-blue: hsl(221, 100%, 96%);
+   --Light-lavender: hsl(241, 100%, 89%);
+   --Dark-gray-blue: hsl(224, 30%, 27%);
+   --font-family:"Hanken Grotesk";
+}
+
+body{
+    font-family: var(--font-family);
+    background-color: var( --Pale-blue);
+
+}
+
+.card{
+    background-color: var(--White );
+    max-width: 375px;
+    margin: 0 auto;
+    &  .result{
+       background:linear-gradient(
+        var( --Light-slate-blue-background),
+        var(--Light-royal-blue-background));
+       padding: 24px 56px 48px ;
+       border-radius: 0px 0px 30px 30px;
+       text-align: center;
+        box-shadow: 0px 30px 60px var(--Light-lavender); 
+
+   &  .title{
+        color: var(--Pale-blue);
+        font-weight: 500;
+        font-size: 1.13rem ;
+        margin-bottom: 24px;}
+  &  .circulo{
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        margin: 0 auto;   /* esto centra el circulo */
+        background:linear-gradient(  
+            var(--Violet-blue-circle),
+            var( --Persian-blue-circle));  /* le aplica un degradado de 2 colores al fondo*/
+             margin-bottom: 24px; 
+            display: grid;
+            place-content: center;  /* esto centra el contenido dentro del circulo*/
+             .puntaje{
+                color: white;
+                font-size:3.5rem ;
+                font-weight: 800; } 
+           & .of {
+                color: var(--Light-lavender);
+            }
+        } 
+    &  .subtitle{
+        color:white;
+        font-size: 1.25rem;
+        margin-bottom: 10px; 
+    }
+     .texto{
+        color:var( --Pale-blue);   
+    }
+
+   }
+
+   & .summary{
+         padding:24px 30px ;
+    & .title{
+        margin-bottom: 24px;
+        font-size:1.125rem ;
+        color: var(--Dark-gray-blue);
+     }
+     & .summary-iten{
+        
+        display:flex ; /*esto es para que los elementos floten */
+        justify-content: space-between;/* esto es para que el contenido tenga un espasio entre ellos*/;
+        padding: 10px;
+        border-radius: 24px;
+        margin-bottom: 16px;
+        font-weight: 700;
+        & .data{
+            display: flex;
+            gap: 16px; 
+          }
+        & .score{
+            color:var( --Dark-gray-blue);
+            & span{
+                color: var(--Light-lavender);
+            }
+          }
+        }
+      
+    & .reaction{
+         background-color:var(--Light-red-t); 
+         color: var(--Light-red);
+        }
+    & .memory{
+         background-color: var(--Orangey-yellow-t);
+         color: var(--Orangey-yellow);
+      } 
+    & .verbal{
+        background-color: var(--Green-teal-t);
+        color: var(--Green-teal);
+       }
+    & .visual{
+         background-color: var(--Cobalt-blue-t);
+         color: var(--Cobalt-blue);
+       }
+    & .continue-btn{
+           background-color: var(--Dark-gray-blue);
+           color: var(--Light-lavender);
+           width: 100%;
+           border-radius:120px;
+           padding: 16px;
+           margin-top: 24px;
+           font-weight: 700;
+           font-size: 1.125rem;
+           border: none;
+           &:hover{
+             background:linear-gradient(
+               var( --Light-slate-blue-background),
+               var(--Light-royal-blue-background));
+             cursor: pointer;
+             }
+
+           }
+          
+        }
+    
+     }
+
+@media (min-width: 740px){
+    body{
+       height: 100vh ; /*la haltura con el {display: grid) y el ( place-content: center) centran la caja */
+       display: grid;
+       place-content: center;
+
+    }
+    .card{
+        display: flex;
+        max-width: 730px;
+      /*  width: 730px; */
+    & .result{
+        border-radius: 32px;
+        flex: 0.9;
+      
+      & .title{
+           font-size: 1.5rem;
+           margin-bottom: 32px;    
+      } 
+      & .circulo{
+        width: 200px ;
+        height:200px ;
+        margin-bottom: 36px;
+        & .puntaje{
+          font-size: 4.5rem;
+        }
+      & .of{
+        font-size:1.125rem ;
+      }
+
+      }
+     & .subtitle{
+        font-size: 2rem;
+     }
+     & .texto{
+        font-size: 1.125rem;
+     }
+
+     }
+    
+
+
+    & .summary{
+        flex: 1;
+      & .title{
+        font-size: 1.5rem;
+        margin-bottom: 28px;
+      }  
+      & .summary-iten{
+          font-size: 1.125rem;
+          margin-bottom: 24px;
+      }
+      & .continue-btn{
+          margin-top: 30px;
+      }
+
+      }     
+
+    }
+
+}
+
+
+
+   
+
+
+    
